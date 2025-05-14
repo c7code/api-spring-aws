@@ -1,6 +1,7 @@
 package com.crud.event.api.config;
 
 
+import com.amazonaws.auth.DefaultAWSCredentialsProviderChain;
 import com.amazonaws.services.s3.AmazonS3;
 import com.amazonaws.services.s3.AmazonS3ClientBuilder;
 import org.springframework.beans.factory.annotation.Configurable;
@@ -17,7 +18,11 @@ public class AwsConfig {
 
     @Bean
     public AmazonS3 createS3Instance() {
-        return AmazonS3ClientBuilder.standard().withRegion(region).build();
+        return AmazonS3ClientBuilder
+                .standard()
+                .withCredentials(new DefaultAWSCredentialsProviderChain())
+                .withRegion(region)
+                .build();
     }
 
 }
