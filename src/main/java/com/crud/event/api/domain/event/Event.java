@@ -4,16 +4,14 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "event")
 @Entity
-@Setter
-@Getter
+@Data
 public class Event {
 
     @Id

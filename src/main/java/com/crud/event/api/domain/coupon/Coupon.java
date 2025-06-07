@@ -3,20 +3,16 @@ package com.crud.event.api.domain.coupon;
 
 import com.crud.event.api.domain.event.Event;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import java.util.Date;
 import java.util.UUID;
 
 @Table(name = "coupon")
 @Entity
-@Setter
-@Getter
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
 public class Coupon {
 
     @Id
